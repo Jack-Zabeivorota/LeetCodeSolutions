@@ -36,6 +36,7 @@ class Solution:
         
         self.word_len = len(words[0])
         self.sequence_len = self.word_len * len(words)
+        valid_string_len = len(string) - self.sequence_len
         word_counts = {}
 
         for word in words:
@@ -47,7 +48,7 @@ class Solution:
         finded_sequences = []
 
         i = 0
-        while i <= len(string) - self.sequence_len:
+        while i <= valid_string_len:
             if self.__check_sequence(string, i, word_counts):
                 finded_sequences.append(i)
             i += 1

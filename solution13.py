@@ -7,18 +7,16 @@ class Solution:
         ```
         '''
 
-        substring_max_len = last_chars_len = chars_len = i = 0
-        source_len = len(source)
+        substring_max_len = last_chars_len = i = 0
         chars = set()
 
-        while i < source_len:
+        while i < len(source):
             chars.add(source[i])
-            chars_len = len(chars)
 
-            if chars_len == last_chars_len:
-                if chars_len > substring_max_len:
-                    substring_max_len = chars_len
-                i -= chars_len
+            if len(chars) == last_chars_len:
+                if len(chars) > substring_max_len:
+                    substring_max_len = len(chars)
+                i -= len(chars)
                 chars.clear()
                 last_chars_len = 0
             else:
@@ -26,7 +24,7 @@ class Solution:
 
             i += 1
             
-        return max(substring_max_len, chars_len)
+        return max(substring_max_len, len(chars))
     
 s = Solution()
 print(s.lengthOfLongestSubstring('dhsdfge'))

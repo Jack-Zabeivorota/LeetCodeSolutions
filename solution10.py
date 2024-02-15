@@ -15,7 +15,7 @@ class Solution:
         for i in range(len(source)):
             if source[i] == '(':
                 opened.append(i)
-            elif source[i] == ')' and len(opened) > 0:
+            elif source[i] == ')' and opened:
                 sequence[opened[-1]] = True
                 sequence[i] = True
                 opened.pop()

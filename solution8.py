@@ -1,4 +1,8 @@
 class Solution:
+    def __getResult(num: int, is_minus: bool) -> int:
+        num = -num if is_minus else num
+        return 2147483647 if num == 2147483648 else num
+
     def divide(self, dividend: int, divisor: int) -> int:
         '''
         Повертає округленний результат ділення `dividend` на `divisor`. `¯\_(ツ)_/¯`
@@ -12,25 +16,18 @@ class Solution:
 
         if dividend == 0 or divisor == 0:
             return 0
-        
-        def invert(num: int) -> int:
-            return num - num - num
-        
-        def getResult(num: int, is_minus: bool) -> int:
-            num = invert(num) if is_minus else num
-            return 2147483647 if num == 2147483648 else num
 
         if dividend > 0 and divisor > 0:
             is_minus = False
         elif dividend < 0 and divisor < 0:
-            dividend = invert(dividend)
-            divisor = invert(divisor)
+            dividend = -dividend
+            divisor = -divisor
             is_minus = False
         elif dividend < 0:
-            dividend = invert(dividend)
+            dividend = -dividend
             is_minus = True
         else:
-            divisor = invert(divisor)
+            divisor = -divisor
             is_minus = True
 
         if dividend == divisor:
@@ -39,7 +36,7 @@ class Solution:
         if dividend == 1 or dividend < divisor:
             return 0
         if divisor == 1:
-            return getResult(dividend, is_minus)
+            return self.__getResult(dividend, is_minus)
 
         count = 0
         while True:
@@ -55,7 +52,7 @@ class Solution:
             if quantity == 1:
                 break
         
-        return getResult(count, is_minus)
+        return self.__getResult(count, is_minus)
                 
 
 s = Solution()
