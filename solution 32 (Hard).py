@@ -1,4 +1,4 @@
-class Solution:
+class Solution32:
     def longestValidParentheses(self, source: str) -> int:
         '''
         Повертає число, яке відповідає найдовшому підрядку із рядка `source`,
@@ -26,11 +26,10 @@ class Solution:
             if val:
                 count += 1
             else:
-                if count > max_count:
-                    max_count = count
+                if count > max_count: max_count = count
                 count = 0
         
         return max(max_count, count)
 
-s = Solution()
+s = Solution32()
 print(s.longestValidParentheses('(()((()())'))

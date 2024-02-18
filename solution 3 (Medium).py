@@ -1,4 +1,4 @@
-class Solution:
+class Solution3:
     def lengthOfLongestSubstring(self, source: str) -> int:
         '''
         Повертає довжину найбільшого підрядка в `source`, символи якого не повторюються.
@@ -26,5 +26,5 @@ class Solution:
             
         return max(substring_max_len, len(chars))
     
-s = Solution()
+s = Solution3()
 print(s.lengthOfLongestSubstring('dhsdfge'))

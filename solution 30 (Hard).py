@@ -1,6 +1,6 @@
 from typing import List, Dict
 
-class Solution:
+class Solution30:
     def __check_sequence(self, string: str, index: int, word_counts: Dict[str, int]):
         i = index
         end = i + self.sequence_len
@@ -13,8 +13,7 @@ class Solution:
                 word_counts[word] -= 1
                 if word_counts[word] == 0:
                     word_counts.pop(word)
-            else:
-                return False
+            else: return False
             
             i += self.word_len
         
@@ -31,8 +30,7 @@ class Solution:
         ```
         '''
 
-        if not string or not words:
-            return []
+        if not string or not words: return []
         
         self.word_len = len(words[0])
         self.sequence_len = self.word_len * len(words)
@@ -55,5 +53,5 @@ class Solution:
         
         return finded_sequences
 
-s = Solution()
+s = Solution30()
 print(s.findSubstring('wordgoodgoodgoodbestword', ["word","good","best","good"]))

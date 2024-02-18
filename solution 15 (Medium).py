@@ -1,6 +1,6 @@
 from typing import List
     
-class Solution:
+class Solution15:
     def __three_exists(self, threes: List[List[int]], three: List[int]) -> bool:
         for t in threes:
             three_is_finded = True
@@ -10,8 +10,7 @@ class Solution:
                     three_is_finded = False
                     break
 
-            if three_is_finded:
-                return True
+            if three_is_finded: return True
                 
         return False
 
@@ -28,8 +27,7 @@ class Solution:
         '''Slow version of method `threeSum`'''
 
         positive = [num for num in nums if num >= 0]
-        if not positive:
-            return []
+        if not positive: return []
         
         threes = []
 
@@ -37,8 +35,7 @@ class Solution:
             threes.append([0, 0, 0])
         
         negative = [num for num in nums if num < 0]
-        if not negative:
-            return threes
+        if not negative: return threes
 
         def pair_combitations(list1: List[int], list2: List[int]):
             for num in list1:
@@ -67,8 +64,7 @@ class Solution:
         threes = []
 
         for i in range(len(nums) - 2):
-            if i > 0 and nums[i - 1] == nums[i]:
-                continue
+            if i > 0 and nums[i - 1] == nums[i]: continue
 
             left_i = i + 1
             right_i = len(nums) - 1
@@ -95,5 +91,5 @@ class Solution:
         
         return threes
 
-s = Solution()
+s = Solution15()
 print(s.threeSum([-1,0,1,2,-1,-4]))

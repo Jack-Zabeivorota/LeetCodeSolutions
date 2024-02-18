@@ -1,6 +1,6 @@
 from typing import List
 
-class Solution:
+class Solution41:
     def firstMissingPositive(self, nums: List[int]) -> int:
         '''
         Повертає перше найменше пропущене позитивне число в листі `nums`.
@@ -16,5 +16,5 @@ class Solution:
             min_num += 1
         return min_num
 
-s = Solution()
+s = Solution41()
 print(s.firstMissingPositive([1,2,0]))

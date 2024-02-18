@@ -1,4 +1,4 @@
-class Solution:
+class Solution65:
     def isNumber(self, s: str) -> bool:
         '''
         Повертає `True`, якщо `s` являється числом.
@@ -11,8 +11,7 @@ class Solution:
         ```
         '''
 
-        if s in ('', '+', '-', '.'):
-            return False
+        if s in ('', '+', '-', '.'): return False
 
         is_find_dot = is_find_e = False
 
@@ -43,15 +42,13 @@ class Solution:
                         is_find_e = True
                         i += 2
 
-                    else:
-                        return False
+                    else: return False
                 
-                else:
-                    return False
+                else: return False
             
             i += 1
         
         return True
 
-s = Solution()
+s = Solution65()
 print(s.isNumber('+5.e3'))

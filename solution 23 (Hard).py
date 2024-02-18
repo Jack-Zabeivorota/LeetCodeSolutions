@@ -4,7 +4,7 @@ class ListNode:
         self.val = val
         self.next = next
     
-class Solution:
+class Solution23:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         '''
         Здійснює зливання всіх ланцюгів з узлів зі списку `lists` в однин ланцюг з узлів,
@@ -19,16 +19,14 @@ class Solution:
         ```
         '''
 
-        if not lists:
-            return None
+        if not lists: return None
         
         values = []
         while lists:
             values.extend(n.val for n in lists if not n is None)
             lists = tuple(n.next for n in lists if not n is None and not n.next is None)
         
-        if not values:
-            return None
+        if not values: return None
         values.sort()
 
         node_merge = ListNode(values[0])
@@ -41,5 +39,5 @@ class Solution:
         return node_merge
                 
 
-s = Solution()
+s = Solution23()
 print(s.mergeKLists([1,2,0]))

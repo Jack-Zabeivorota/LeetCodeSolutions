@@ -1,6 +1,6 @@
 from typing import List
 
-class Solution:
+class Solution2482:
     def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
         '''
         Повертає матрицю того ж розміру, що і матриця `grid`, кожен елемент якої
@@ -13,17 +13,13 @@ class Solution:
         ```
         '''
 
-        if not grid:
-            return []
+        if not grid: return []
 
-        rowCount = {}
-        colCount = {}
+        rowCount, colCount = {}, {}
 
-        for y in range(len(grid)):
-            rowCount[y] = 0
+        for y in range(len(grid)): rowCount[y] = 0
 
-        for x in range(len(grid[0])):
-            colCount[x] = 0
+        for x in range(len(grid[0])): colCount[x] = 0
 
         for y in range(len(grid)):
             for x in range(len(grid[y])):
@@ -43,5 +39,5 @@ class Solution:
         
         return diffGrid
 
-s = Solution()
+s = Solution2482()
 print(s.onesMinusZeros([[0,1,1],[1,0,1],[0,0,1]]))
