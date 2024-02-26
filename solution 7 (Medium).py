@@ -7,9 +7,9 @@ class Solution7:
         ```
         '''
 
-        x_str = str(x)
+        if x >= 0 and x <= 9: return x
 
-        if len(x_str) == 1: return x
+        x_str = str(x)
 
         x = int(x_str[::-1]) if x > 0 else -int(x_str[:0:-1])
         

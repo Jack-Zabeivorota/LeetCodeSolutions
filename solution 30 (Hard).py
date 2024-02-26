@@ -19,7 +19,6 @@ class Solution30:
         
         return True
 
-
     def findSubstring(self, string: str, words: List[str]) -> List[int]:
         '''
         Повертає лист з індексами входження всіх підрядків в рядку `string`,

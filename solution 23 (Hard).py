@@ -22,9 +22,18 @@ class Solution23:
         if not lists: return None
         
         values = []
+
         while lists:
-            values.extend(n.val for n in lists if not n is None)
-            lists = tuple(n.next for n in lists if not n is None and not n.next is None)
+            next_lists = []
+
+            for node in lists:
+                if node is None: continue
+                values.append(node.val)
+                
+                if not node.next is None:
+                    next_lists.append(node.next)
+            
+            lists = next_lists
         
         if not values: return None
         values.sort()

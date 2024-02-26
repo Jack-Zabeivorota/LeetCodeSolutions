@@ -51,9 +51,9 @@ SELECT
     2) AS "Cancellation Rate"
 FROM Trips
 WHERE
+    DATE(request_at) BETWEEN '2013-10-01' AND '2013-10-03' AND
     client_id IN (SELECT users_id FROM Users WHERE banned = 'No') AND
-    driver_id IN (SELECT users_id FROM Users WHERE banned = 'No') AND
-    DATE(request_at) BETWEEN '2013-10-01' AND '2013-10-03'
+    driver_id IN (SELECT users_id FROM Users WHERE banned = 'No')
 GROUP BY request_at
 ORDER BY request_at
 
