@@ -1,7 +1,5 @@
-from typing import List
-
 class QueenVariator:
-    def __init__(self, chessboard: List[List[str | None]], queen_x: int, collector: List, prev_variator = None):
+    def __init__(self, chessboard: list[list[str | None]], queen_x: int, collector: list, prev_variator = None):
         self.prev_variator = prev_variator
         self.__chessboard = chessboard
         self.__set_queen_on_chessboard(queen_x)
@@ -11,8 +9,8 @@ class QueenVariator:
         else:
             collector.append(self)
     
-    def __generate_variators(self, collector: List):
-        for x in range(len(self.__chessboard[0])):
+    def __generate_variators(self, collector: list):
+        for x in range(len(self.__chessboard[1])):
             if self.__chessboard[1][x] is None:
                 chessboard = [self.__chessboard[i].copy() for i in range(1, len(self.__chessboard))]
                 QueenVariator(chessboard, x, collector, self)
@@ -23,24 +21,20 @@ class QueenVariator:
         self.__chessboard[0] = ['.'] * row_len
         self.__chessboard[0][x] = 'Q'
 
-        shift = 1
-
         for y in range(1, len(self.__chessboard)):
             self.__chessboard[y][x] = '.'
 
-            if x - shift > -1:
-                self.__chessboard[y][x - shift] = '.'
+            if x - y > -1:
+                self.__chessboard[y][x - y] = '.'
             
-            if x + shift < row_len:
-                self.__chessboard[y][x + shift] = '.'
-
-            shift += 1
+            if x + y < row_len:
+                self.__chessboard[y][x + y] = '.'
 
     @property
     def first_row(self): return self.__chessboard[0]
 
     @staticmethod
-    def get_variants(variators: List):
+    def get_variants(variators: list):
         if not variators: return []
 
         chessboards = []
@@ -60,7 +54,7 @@ class QueenVariator:
         return chessboards
 
 class Solution51:
-    def solveNQueens(self, n: int) -> List[List[str]]:
+    def solveNQueens(self, n: int) -> list[list[str]]:
         '''
         Повертає всі конфігурації з `n` дамок на дошці `n * n`,
         в якому жодна дамка не атакує другу дамку
