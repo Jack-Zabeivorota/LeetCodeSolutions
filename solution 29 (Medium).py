@@ -9,8 +9,10 @@ class Solution29:
 
         Але в ході виконання не використовуються операції ділення, множення або mod (залишок від ділення),
         при тому швидкість виконання висока.
+
         ```
         divide(5, 2) -> 2
+
         ```
         '''
 
@@ -18,13 +20,16 @@ class Solution29:
 
         if dividend > 0 and divisor > 0:
             is_minus = False
+
         elif dividend < 0 and divisor < 0:
             dividend = -dividend
             divisor = -divisor
             is_minus = False
+
         elif dividend < 0:
             dividend = -dividend
             is_minus = True
+            
         else:
             divisor = -divisor
             is_minus = True

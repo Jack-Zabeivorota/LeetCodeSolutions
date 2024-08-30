@@ -1,7 +1,5 @@
-from typing import List
-    
 class Solution15:
-    def __three_exists(self, threes: List[List[int]], three: List[int]) -> bool:
+    def __three_exists(self, threes: list[list[int]], three: list[int]) -> bool:
         for t in threes:
             three_is_finded = True
 
@@ -14,7 +12,7 @@ class Solution15:
                 
         return False
 
-    def __three_zero_exists(self, nums: List[int]) -> bool:
+    def __three_zero_exists(self, nums: list[int]) -> bool:
         count = 0
         for num in nums:
             if num == 0:
@@ -23,7 +21,7 @@ class Solution15:
                     return True
         return False
 
-    def threeSumSlow(self, nums: List[int]) -> List[List[int]]:
+    def threeSumSlow(self, nums: list[int]) -> list[list[int]]:
         '''Slow version of method `threeSum`'''
 
         positive = [num for num in nums if num >= 0]
@@ -37,7 +35,7 @@ class Solution15:
         negative = [num for num in nums if num < 0]
         if not negative: return threes
 
-        def pair_combitations(list1: List[int], list2: List[int]):
+        def pair_combitations(list1: list[int], list2: list[int]):
             for num in list1:
                 i1 = i2 = 0
                 for i1 in range(len(list2)):
@@ -51,12 +49,14 @@ class Solution15:
         
         return threes
 
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
         '''
         Знаходить в `nums` всі комбінації з трьох чисел, які в сумі дають 0,
         та повертає лист з цими комбінаціями.
+
         ```
         threeSum([-1,0,1,2,-1,-4]) -> [[-1, -1, 2], [0, -1, 1]]
+        
         ```
         '''
 

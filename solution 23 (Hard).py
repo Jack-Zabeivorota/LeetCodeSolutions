@@ -1,14 +1,14 @@
-from typing import List, Optional
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
     
 class Solution23:
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
         '''
         Здійснює зливання всіх ланцюгів з узлів зі списку `lists` в однин ланцюг з узлів,
         значення яких розташовані по зростанню.
+
         ```
         mergeKLists([
             [5 -> 8 -> 2],

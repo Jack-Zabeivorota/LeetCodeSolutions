@@ -1,5 +1,3 @@
-from typing import List, Optional
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -20,17 +18,17 @@ class NodeData:
         return max_val if max_val >= 0 else 0
 
 class Solution124:
-    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+    def maxPathSum(self, root: TreeNode | None) -> int:
         '''
         Повретає найбільший шлях (суму узлів) із дерева `root`, не використовующи рекурсію.
 
         ```
-        #  -10
-        #  /  \\
-        # 9    20
-        #     /  \\
-        #    15   7
-        
+        '  -10      '
+        '  /  \     '
+        ' 9    20   '
+        '     /  \  '
+        '    15   7 '
+        '           '
         result: 15 + 20 + 7 = 42
         ```
         '''

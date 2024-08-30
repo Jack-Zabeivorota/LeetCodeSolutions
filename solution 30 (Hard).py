@@ -1,7 +1,5 @@
-from typing import List, Dict
-
 class Solution30:
-    def __check_sequence(self, string: str, index: int, word_counts: Dict[str, int]):
+    def __check_sequence(self, string: str, index: int, word_counts: dict[str, int]):
         i = index
         end = i + self.sequence_len
         word_counts = word_counts.copy()
@@ -19,13 +17,15 @@ class Solution30:
         
         return True
 
-    def findSubstring(self, string: str, words: List[str]) -> List[int]:
+    def findSubstring(self, string: str, words: list[str]) -> list[int]:
         '''
         Повертає лист з індексами входження всіх підрядків в рядку `string`,
         в яких присутні всі слова вказані в `words` в любому порядку і без повторів.
         Слова в `words` повинні бути одної довжини.
+
         ```
         findSubstring('wordgoodgoodgoodbestword', ["word","good","best","good"]) -> [8]
+        
         ```
         '''
 

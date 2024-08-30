@@ -1,11 +1,10 @@
-from typing import List
-
 class Solution2482:
-    def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
+    def onesMinusZeros(self, grid: list[list[int]]) -> list[list[int]]:
         '''
         Повертає матрицю того ж розміру, що і матриця `grid`, кожен елемент якої
         дорівнює сумі всіх значень з рядку і колонки матриці `grid`,
         на перехресті якого знаходиться елемент, де 1 = +1, а 0 = -1.
+
         ```
         [0, 1, 1],    [ 0, 0, 4],
         [1, 0, 1], -> [ 0, 0, 4],

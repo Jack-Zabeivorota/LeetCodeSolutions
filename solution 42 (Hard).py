@@ -1,8 +1,6 @@
-from typing import List
-
 class Solution42:
-    def trap_slow(self, heights: List[int]) -> int:
-        'Slow version of `trap`'
+    def trap_slow(self, heights: list[int]) -> int:
+        '''Slow version of `trap`'''
 
         max_height = max(heights)
         wather_count = 0
@@ -21,17 +19,18 @@ class Solution42:
                     
         return wather_count
 
-    def trap(self, heights: List[int]) -> int:
+    def trap(self, heights: list[int]) -> int:
         '''
         Повертає кількість води яка залишиться після дощу на рельєфі з вершинами `heights`.
+
         ```
-        m - block
-        ; - wather
-
-        3|       m
-        2|   m;;;mm;m
-        1| m;mm;mmmmmm;m
-
+        ' m - block        '
+        ' ; - wather       '
+        '                  '
+        ' 3|       m       '
+        ' 2|   m;;;mm;m    '
+        ' 1| m;mm;mmmmmm;m '
+        '                  '
         trap([0,1,0,2,1,0,1,3,2,1,2,1,0,1]) -> 7
         ```
         '''

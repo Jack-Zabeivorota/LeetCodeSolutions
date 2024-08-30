@@ -2,12 +2,12 @@ class Solution65:
     def isNumber(self, s: str) -> bool:
         '''
         Повертає `True`, якщо `s` являється числом.
-        ```
-        isNumber('123') -> True
-        isNumber('-89.546') -> True
-        isNumber('.27') -> True
-        isNumber('+5.e3') -> True
 
+        ```
+        isNumber('123')     -> True
+        isNumber('-89.546') -> True
+        isNumber('.27')     -> True
+        isNumber('+5.e3')   -> True
         ```
         '''
 

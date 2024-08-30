@@ -3,6 +3,7 @@ class Solution32:
         '''
         Повертає число, яке відповідає найдовшому підрядку із рядка `source`,
         в якому всі дужки вистрояні корректно.
+        
         ```
         longestValidParentheses('(()') -> 2
         longestValidParentheses('(()((()())') -> 6

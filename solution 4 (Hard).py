@@ -1,11 +1,11 @@
-from typing import List
-
 class Solution4:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
         '''
         Повертає медіану листів `nums1` і `nums2`.
+        
         ```
         findMedianSortedArrays([1,3], [2,8]) -> 2.5
+        
         ```
         '''
 

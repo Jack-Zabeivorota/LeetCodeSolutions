@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution135:
-    def candy(self, ratings: List[int]) -> int:
+    def candy(self, ratings: list[int]) -> int:
         '''
         Повертає мінімальну кількість цукерок, яку можна роздати дітям за такими правилами:
         - Кожна дитина отримає хоча б одну цукерку;

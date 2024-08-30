@@ -1,5 +1,3 @@
-from typing import List, Tuple, Set
-
 class Rect:
     def __init__(self, y: int, x: int, width: int, height: int):
         self.y, self.x = y, x
@@ -11,7 +9,7 @@ class Rect:
     @property
     def right_x(self) -> int: return self.x + self.width - 1
 
-    def is_included_in_any(self, segments: List[Tuple[int, int]]) -> bool:
+    def is_included_in_any(self, segments: list[tuple[int, int]]) -> bool:
         for x1, x2 in reversed(segments):
             if x1 <= self.x:
                 return self.right_x <= x2
@@ -19,7 +17,7 @@ class Rect:
         return False
 
 class Solution85:
-    def __get_segments(self, matrix: List[List[str]]) -> List[List[Tuple[int, int]]]:
+    def __get_segments(self, matrix: list[list[str]]) -> list[list[tuple[int, int]]]:
         '''Finds all segments in all rows of a `matrix`'''
 
         rows, columns = len(matrix), len(matrix[0])
@@ -40,7 +38,7 @@ class Solution85:
         
         return lines
 
-    def __turn_on_side(self, matrix: List[List[str]]) -> List[List[str]]:
+    def __turn_on_side(self, matrix: list[list[str]]) -> list[list[str]]:
         rows, columns = len(matrix), len(matrix[0])
         matrix_on_side = [[None] * rows for _ in range(columns)]
 
@@ -50,14 +48,14 @@ class Solution85:
         
         return matrix_on_side
 
-    def __get_max_perimeter(self, lines: List[List[Tuple[int, int]]]) -> int:
-        rects: List[Rect] = []
-        temp_rects: Set[Rect] = set()
+    def __get_max_perimeter(self, lines: list[list[tuple[int, int]]]) -> int:
+        rects: list[Rect] = []
+        temp_rects: set[Rect] = set()
 
         # rectangles are assembling from segments
         for y, segments in enumerate(lines):
-            del_rects: Set[Rect] = set()
-            add_rects: Set[Rect] = set()
+            del_rects: set[Rect] = set()
+            add_rects: set[Rect] = set()
 
             # checking continue rectangle in next lines
             for rect in temp_rects:
@@ -98,7 +96,7 @@ class Solution85:
 
         return max(map(lambda r: r.perimeter, rects)) if rects else 0
 
-    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+    def maximalRectangle(self, matrix: list[list[str]]) -> int:
         '''
         Повертає найбільший периметр прямокутника з одиниць из матриці `matrix`
 

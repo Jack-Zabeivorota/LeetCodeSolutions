@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution68:
-    def __generate_line(self, words: List[str], free_space: int) -> str:
+    def __generate_line(self, words: list[str], free_space: int) -> str:
         spaces_coef = free_space / (len(words) - 1)
         spaces = int(spaces_coef)
 
@@ -11,7 +9,7 @@ class Solution68:
         else_spaces = free_space - spaces * (len(words) - 1)
         return f'{(" " * (spaces + 1)).join(words[:else_spaces])}{" " * (spaces + 1)}{(" " * spaces).join(words[else_spaces:])}'
 
-    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
+    def fullJustify(self, words: list[str], maxWidth: int) -> list[str]:
         '''
         Повертає рядки довжиною `maxWidth` з щільно упакованими в них словами `words`,
         які розтянуті по ширені рядка.

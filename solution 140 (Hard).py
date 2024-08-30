@@ -17,8 +17,10 @@ class Solution140:
         '''
         Повертає всі варіанти реченнь із `string`, всі розділені
         пробілами слова якого можна знайти в списку `word_dict`.
+
         ```
         wordBreak("catsanddog", ["cats","dog","sand","and","cat"]) -> ["cats and dog", "cat sand dog"]
+        
         ```
         '''
 

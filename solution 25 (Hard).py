@@ -1,5 +1,3 @@
-from typing import Optional, List
-
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -19,7 +17,7 @@ class ListNode:
         return head
     
     @staticmethod
-    def get_values_from_ListNodes(head) -> List[int]:
+    def get_values_from_ListNodes(head) -> list[int]:
         values = []
         node = head
 
@@ -30,8 +28,8 @@ class ListNode:
         return values
 
 class Solution25:
-    def reverseKGroup_Slow(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        'low version of reverseKGroup'
+    def reverseKGroup_Slow(self, head: ListNode | None, k: int) -> ListNode | None:
+        '''low version of reverseKGroup'''
 
         if not head: return None
 
@@ -54,9 +52,10 @@ class Solution25:
         
         return merge
 
-    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+    def reverseKGroup(self, head: ListNode | None, k: int) -> ListNode | None:
         '''
         Повертає ListNode `head`, в якій кожна повна група із `k` елементів перевернута.
+
         ```
         reverseKGroup([1,2,3,4,5,6], 3) -> [3,2,1,6,5,4]
         reverseKGroup([1,2,3,4,5], 3) -> [3,2,1,4,5]

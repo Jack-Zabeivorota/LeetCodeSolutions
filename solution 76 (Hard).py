@@ -13,6 +13,7 @@ class Solution76:
 
         ```
         s.minWindow("ADAOBECODBEANCBG", "ABBC") -> 'BEANCB'
+        
         ```
         '''
 

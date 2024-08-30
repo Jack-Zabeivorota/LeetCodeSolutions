@@ -2,8 +2,10 @@ class Solution7:
     def reverse(self, x: int) -> int:
         '''
         Повертає перевернуте число `x`.
+        
         ```
         reverse(-4587) -> -7854
+        
         ```
         '''
 
