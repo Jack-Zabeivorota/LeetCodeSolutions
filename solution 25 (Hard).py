@@ -28,8 +28,8 @@ class ListNode:
         return values
 
 class Solution25:
-    def reverseKGroup_Slow(self, head: ListNode | None, k: int) -> ListNode | None:
-        '''low version of reverseKGroup'''
+    def reverseKGroupSlow(self, head: ListNode | None, k: int) -> ListNode | None:
+        '''Slow version of reverseKGroup'''
 
         if not head: return None
 
